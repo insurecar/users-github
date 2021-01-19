@@ -1,0 +1,90 @@
+.container {
+  width: 1200px;
+  margin: 0 auto;
+  padding: 0 80px 0 40px;
+  font-family: "Roboto", sans-serif;
+  background: silver;
+  height: 100vh;
+  background: rgb(57, 64, 72);
+}
+
+.header {
+  width: 1080px;
+  height: 100px;
+  display: flex;
+  justify-content: space-between;
+
+  &__right {
+    display: flex;
+    align-items: center;
+    color: rgb(245, 240, 200);
+  }
+
+  .logo {
+    height: 100px;
+    width: 350px;
+  }
+  hr {
+    color: rgb(245, 240, 200);
+  }
+}
+
+.main {
+  width: 1080px;
+  height: 700px;
+  background: red;
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.menu {
+  width: 350px;
+  height: 500px;
+  background: olive;
+
+  &__input {
+    width: 350px;
+    padding: 10px;
+    font-size: 16px;
+    outline: none;
+    border-radius: 10px;
+  }
+
+  &__search {
+    height: 30px;
+    padding: 10px 0;
+    color: white;
+  }
+
+  .list {
+    list-style: none;
+    padding: 0;
+
+    &__item {
+      margin-bottom: 4px;
+
+      &-link {
+        text-decoration: none;
+        color: white;
+      }
+    }
+  }
+}
+
+.content {
+  width: 710px;
+  height: 500px;
+  background: lawngreen;
+  display: flex;
+  justify-content: space-between;
+  align-content: flex-start;
+  row-gap: 10px;
+  flex-wrap: wrap;
+
+  .folders {
+    width: 350px;
+    background: coral;
+    height: 100px;
+  }
+}
