@@ -4,14 +4,11 @@ import axios from "axios";
 
 const Folders = () => {
   const { userId } = useParams();
-  console.log(userId);
   const [repo, setRepo] = useState([]);
 
   useEffect(() => {
     axios.get(`https://api.github.com/users/${userId}/repos`).then((response) => setRepo(response.data));
   }, [userId]);
-
-  console.log(repo);
 
   return (
     <>
