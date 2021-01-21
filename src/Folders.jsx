@@ -6,24 +6,28 @@ const Folders = () => {
   const { userId } = useParams();
   console.log(userId);
   const [repo, setRepo] = useState([]);
-  const [language, setLanguage] = useState([]);
-  const [description, setDescription] = useState([]);
 
   useEffect(() => {
-    axios.get(`https://api.github.com/users/${userId}/repos`).then((response) => setRepo(response));
-  }, []);
+    axios.get(`https://api.github.com/users/${userId}/repos`).then((response) => setRepo(response.data));
+  }, [userId]);
 
-  // console.log(repo);
+  console.log(repo);
 
   return (
     <>
-      <div className="folders">{userId}</div>
-      <div className="folders">{userId}</div>
-      <div className="folders">{userId}</div>
-      <div className="folders">{userId}</div>
-      <div className="folders">{userId}</div>
-      <div className="folders">{userId}</div>
-      <div className="folders">{userId}</div>
+      {[...repo].slice(0, 10).map(({ id, name, language, description }) => (
+        <div key={id} className="folders">
+          <div className="folders__description">
+            <span>{name}</span>
+          </div>
+          <div className="folders__description">
+            Language: <span>{language}</span>
+          </div>
+          <div className="folders__description">
+            Description: <span>{description}</span>
+          </div>
+        </div>
+      ))}
     </>
   );
 };
